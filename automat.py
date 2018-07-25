@@ -1,4 +1,6 @@
 import random
+import colored
+from termcolor import stylize
 ITEMS = ["jablko", "hruska", "banan", "hrozno", "clover"]   
 
 prve = None
@@ -20,7 +22,7 @@ def otazka():
 	odpoved = str(input("Chcete hrat dalej?"))
 	if odpoved == "A":
 		return True
-	elif odpoved == N:
+	elif odpoved == "N":
 		return False
 	else:
 		print ("Zla odpoved")
@@ -45,7 +47,7 @@ def vypis():
 		win = -1
 	peniaze += win
 	if win > 0:
-		print (prve, druhe, tretie,"Vyhral si", win)
+		print (prve, druhe, tretie, stylize("Vyhral si", colored.fg("green")), win)
 	else:
 		print (prve, druhe, tretie,"Prehral si")
 hrat()
